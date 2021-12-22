@@ -1,0 +1,11 @@
+[Unit]
+Description=Platform profiles alerter
+PartOf=graphical-session.target
+Requires=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=@bindir@/profilesalertd
+
+[Install]
+WantedBy=graphical-session.target
