@@ -110,7 +110,7 @@ int main() {
 	}
 
 	sd_event_source *event_source;
-	ret = sd_event_add_io(event, &event_source, fd, EPOLLPRI, platform_profile_updated, NULL);
+	ret = sd_event_add_io(event, &event_source, fd, EPOLLPRI | EPOLLET, platform_profile_updated, NULL);
 	if (ret < 0) {
 		warn("Could file watch", -ret);
 		goto err;
